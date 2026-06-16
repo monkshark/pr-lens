@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm test
+
+      - run: npm run build
+
+      - name: Package
+        run: |
+          cp -r dist pr-lens
+          zip -r "pr-lens-${GITHUB_REF_NAME}.zip" pr-lens
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: pr-lens-*.zip
+          generate_release_notes: true
+          body: |
+            Unpacked Chrome extension build.
+
+            Install:
+            1. Download `pr-lens-${{ github.ref_name }}.zip` below and unzip it.
+            2. Open `chrome://extensions`, enable Developer mode.
+            3. Click "Load unpacked" and select the unzipped `pr-lens` folder.
+            4. Open any GitHub PR's "Files changed" tab.

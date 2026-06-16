@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1080" y2="574" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7C6CF5"/>
+      <stop offset="0.4" stop-color="#4a3bb0"/>
+      <stop offset="1" stop-color="#1b1840"/>
+    </linearGradient>
+    <radialGradient id="glowWhite" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.20"/>
+      <stop offset="0.62" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowPink" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b072e8" stop-opacity="0.45"/>
+      <stop offset="0.62" stop-color="#b072e8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="topLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="0.3" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lensFill" cx="0.34" cy="0.28" r="0.75">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.26"/>
+      <stop offset="0.55" stop-color="#7C6CF5" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </radialGradient>
+    <pattern id="dots" width="27" height="27" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#ffffff" fill-opacity="0.07"/>
+    </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="cardShadow" x="-40%" y="-40%" width="180%" height="200%">
+      <feDropShadow dx="0" dy="30" stdDeviation="22" flood-color="#120834" flood-opacity="0.7"/>
+    </filter>
+    <clipPath id="clipA"><rect x="46" y="72" width="238" height="180" rx="15"/></clipPath>
+    <clipPath id="clipB"><rect x="252" y="160" width="316" height="152" rx="15"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  <circle cx="130" cy="50" r="270" fill="url(#glowWhite)" filter="url(#soft)"/>
+  <circle cx="1080" cy="400" r="240" fill="url(#glowPink)" filter="url(#soft)"/>
+  <rect width="1200" height="400" fill="url(#dots)"/>
+  <rect width="1200" height="400" fill="url(#topLight)"/>
+
+  <g transform="rotate(-5 165 162)" filter="url(#cardShadow)">
+    <rect x="46" y="72" width="238" height="180" rx="15" fill="#13151c" stroke="#2a2f3a"/>
+    <g clip-path="url(#clipA)">
+      <line x1="46" y1="113" x2="284" y2="113" stroke="#21242c"/>
+      <rect x="59" y="84" width="18" height="18" rx="6" fill="#7C6CF5"/>
+      <circle cx="68" cy="93" r="4" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <text x="85" y="97" fill="#ffffff" font-size="12.5" font-weight="600">PR Lens</text>
+      <text x="268" y="97" fill="#8b949e" font-size="11">&#9662;</text>
+
+      <text x="59" y="137" fill="#c9d1d9" font-size="11.5" font-weight="500">Seen 8/12 today</text>
+      <text x="271" y="137" fill="#8b949e" font-size="10.5" text-anchor="end" font-family="'JetBrains Mono', monospace">67%</text>
+      <rect x="59" y="144" width="212" height="5" rx="2.5" fill="#21242c"/>
+      <rect x="59" y="144" width="142" height="5" rx="2.5" fill="#7C6CF5"/>
+
+      <g font-family="'JetBrains Mono', monospace" font-size="10.5">
+        <rect x="53" y="170" width="14" height="14" rx="4" fill="#7C6CF5" opacity="0.55"/>
+        <path d="M56.5 177.2l2.4 2.4 4.6-5.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+        <text x="75" y="181" fill="#7d828c">components/FileRow.tsx</text>
+        <line x1="75" y1="177.5" x2="201" y2="177.5" stroke="#7d828c" stroke-width="1"/>
+        <text x="271" y="181" fill="#3fb950" font-size="10" text-anchor="end">+18</text>
+
+        <rect x="53" y="193" width="14" height="14" rx="4" fill="#7C6CF5" opacity="0.55"/>
+        <path d="M56.5 200.2l2.4 2.4 4.6-5.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+        <text x="75" y="204" fill="#7d828c">lib/github/parseDiff.ts</text>
+        <line x1="75" y1="200.5" x2="201" y2="200.5" stroke="#7d828c" stroke-width="1"/>
+        <text x="271" y="204" fill="#3fb950" font-size="10" text-anchor="end">+56</text>
+
+        <rect x="53" y="216" width="14" height="14" rx="4" fill="none" stroke="#48505b" stroke-width="1.5"/>
+        <text x="75" y="227" fill="#c9d1d9">state/store.ts</text>
+        <text x="271" y="227" font-size="10" text-anchor="end"><tspan fill="#3fb950">+31</tspan> <tspan fill="#f85149">&#8722;7</tspan></text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="rotate(4 410 236)" filter="url(#cardShadow)">
+    <rect x="252" y="160" width="316" height="152" rx="15" fill="#0d1117" stroke="#2a2f3a"/>
+    <g clip-path="url(#clipB)">
+      <rect x="252" y="160" width="316" height="34" fill="#161b22"/>
+      <line x1="252" y1="194" x2="568" y2="194" stroke="#2a2f3a"/>
+      <circle cx="268" cy="177" r="4.5" fill="#ff5f57"/>
+      <circle cx="281" cy="177" r="4.5" fill="#febc2e"/>
+      <circle cx="294" cy="177" r="4.5" fill="#28c840"/>
+      <text x="307" y="181" fill="#8b949e" font-size="11" font-family="'JetBrains Mono', monospace">parseDiff.ts</text>
+
+      <rect x="253" y="220" width="314" height="21" fill="#f85149" fill-opacity="0.13"/>
+      <rect x="253" y="241" width="314" height="21" fill="#3fb950" fill-opacity="0.13"/>
+      <rect x="253" y="262" width="314" height="21" fill="#3fb950" fill-opacity="0.13"/>
+      <g font-family="'JetBrains Mono', monospace" font-size="11.5">
+        <text x="286" y="214" fill="#3a414c" text-anchor="end">11</text><text x="296" y="214" fill="#8b949e" xml:space="preserve">  const seen =</text>
+        <text x="286" y="235" fill="#3a414c" text-anchor="end">12</text><text x="296" y="235" fill="#f0a9a5">- useState(true);</text>
+        <text x="286" y="256" fill="#3a414c" text-anchor="end">12</text><text x="296" y="256" fill="#7ee787">+ useState(false);</text>
+        <text x="286" y="277" fill="#3a414c" text-anchor="end">13</text><text x="296" y="277" fill="#7ee787">+ files.filter(seen)</text>
+        <text x="286" y="298" fill="#3a414c" text-anchor="end">14</text><text x="296" y="298" fill="#8b949e" xml:space="preserve">  return rows;</text>
+      </g>
+    </g>
+  </g>
+
+  <g>
+    <rect x="442" y="166" width="30" height="88" rx="15" fill="#ffffff" fill-opacity="0.94" transform="rotate(-45 457 166)"/>
+    <circle cx="414" cy="134" r="71.5" fill="url(#lensFill)" stroke="#ffffff" stroke-width="9" stroke-opacity="0.95"/>
+    <ellipse cx="382" cy="106" rx="26" ry="14" fill="#ffffff" fill-opacity="0.55" filter="url(#soft)"/>
+    <text x="414" y="130" fill="#7ee787" font-size="15" font-weight="500" text-anchor="middle" font-family="'JetBrains Mono', monospace">+ added</text>
+    <text x="414" y="152" fill="#ff9d97" font-size="15" font-weight="500" text-anchor="middle" font-family="'JetBrains Mono', monospace">&#8722; removed</text>
+  </g>
+
+  <g>
+    <rect x="650" y="103" width="150" height="26" rx="13" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.28"/>
+    <circle cx="666" cy="116" r="3" fill="#7ee787"/>
+    <circle cx="666" cy="116" r="6" fill="#7ee787" fill-opacity="0.4" filter="url(#soft)"/>
+    <text x="678" y="120" fill="#ffffff" font-size="11.5" font-weight="500" letter-spacing="0.3">Chrome Extension</text>
+
+    <rect x="650" y="150" width="54" height="54" rx="15" fill="#ffffff" fill-opacity="0.96"/>
+    <circle cx="677" cy="177" r="11.5" fill="none" stroke="#7C6CF5" stroke-width="4"/>
+    <text x="722" y="199" fill="#ffffff" font-size="62" font-weight="800" letter-spacing="-1.8">PR Lens</text>
+
+    <text x="650" y="252" fill="#ffffff" fill-opacity="0.86" font-size="20">Review large PRs faster &#8212; track files &amp;</text>
+    <text x="650" y="278" fill="#ffffff" fill-opacity="0.86" font-size="20">summarize with on-device AI.</text>
+
+    <g font-size="12.5" font-weight="500">
+      <rect x="650" y="304" width="160" height="28" rx="8" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="730" y="322" fill="#ffffff" text-anchor="middle">Track reviewed files</text>
+      <rect x="819" y="304" width="124" height="28" rx="8" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="881" y="322" fill="#ffffff" text-anchor="middle">+ / &#8722; diff stats</text>
+      <rect x="952" y="304" width="116" height="28" rx="8" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="1010" y="322" fill="#ffffff" text-anchor="middle">On-device AI</text>
+    </g>
+  </g>
+</svg>
