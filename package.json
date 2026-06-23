@@ -1,6 +1,6 @@
 {
   "name": "pr-lens",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "GitHub PR helper: file-tree review tracking and on-device AI summaries on the Files changed page.",
   "license": "MIT",
   "author": "Huido Choo",

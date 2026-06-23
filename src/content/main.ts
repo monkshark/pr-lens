@@ -4,6 +4,7 @@ import { PrLens } from './panel'
 
 let lens: PrLens | null = null
 let currentKey = ''
+let lastHref = ''
 
 function getTitle(): string | undefined {
   const el = document.querySelector(SEL.issueTitle)
@@ -11,6 +12,7 @@ function getTitle(): string | undefined {
 }
 
 async function sync() {
+  lastHref = location.href
   const path = location.pathname
   const ref = parsePrUrl(path)
   if (ref && isFilesPage(path)) {
@@ -69,6 +71,22 @@ function scheduleRescan() {
   }, 300)
 }
 
+function onMutations(records: MutationRecord[]) {
+  if (location.href !== lastHref) {
+    lastHref = location.href
+    scheduleSync()
+    return
+  }
+  if (isOwnMutation(records)) return
+  if (!lens) {
+    if (parsePrUrl(location.pathname) && isFilesPage(location.pathname)) {
+      scheduleSync()
+    }
+    return
+  }
+  scheduleRescan()
+}
+
 hookHistory()
 window.addEventListener('gh-prh-loc', scheduleSync)
 
@@ -85,10 +103,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
   void sync()
 })
 
-const observer = new MutationObserver((records) => {
-  if (isOwnMutation(records)) return
-  scheduleRescan()
-})
+const observer = new MutationObserver(onMutations)
 observer.observe(document.documentElement, { childList: true, subtree: true })
 
 void sync()

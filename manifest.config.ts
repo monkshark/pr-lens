@@ -3,7 +3,7 @@ import { defineManifest } from '@crxjs/vite-plugin'
 export default defineManifest({
   manifest_version: 3,
   name: 'PR Lens',
-  version: '1.0.0',
+  version: '1.1.0',
   description:
     'Track which files you have reviewed on a GitHub PR and get on-device AI summaries. Free, local, no API key required.',
   minimum_chrome_version: '138',
